@@ -41,7 +41,7 @@ public class Interfaz extends javax.swing.JFrame {
         modelo.addElement("Pala");
         modelo.addElement("MotoSierra");
         modelo.addElement("Desarmado");
-        arma_field1.setModel(modelo);
+        arma_field2.setModel(modelo);
     }
 
     /**
@@ -80,7 +80,7 @@ public class Interfaz extends javax.swing.JFrame {
         Save_button1 = new java.awt.Button();
         jLabel3 = new javax.swing.JLabel();
         label16 = new java.awt.Label();
-        age_field1 = new javax.swing.JFormattedTextField();
+        age_field1 = new java.awt.TextField();
         jPanel2 = new javax.swing.JPanel();
         label5 = new java.awt.Label();
         label6 = new java.awt.Label();
@@ -228,11 +228,7 @@ public class Interfaz extends javax.swing.JFrame {
         label16.setText("toda la informacion");
 
         age_field1.setForeground(new java.awt.Color(51, 51, 51));
-        try {
-            age_field1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#######")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        age_field1.setText(" ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -267,18 +263,15 @@ public class Interfaz extends javax.swing.JFrame {
                                                     .addComponent(label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addComponent(label3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(rb_m1)
-                                                                .addGap(49, 49, 49)
-                                                                .addComponent(jRadioButton2))
-                                                            .addComponent(name_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                        .addGap(10, 10, 10)
-                                                        .addComponent(age_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                    .addComponent(name_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(age_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                            .addComponent(rb_m1)
+                                                            .addGap(49, 49, 49)
+                                                            .addComponent(jRadioButton2)))))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -329,7 +322,7 @@ public class Interfaz extends javax.swing.JFrame {
                                             .addComponent(rb_e)
                                             .addComponent(jRadioButton6))
                                         .addGap(30, 30, 30)
-                                        .addComponent(name_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(name_field1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(145, 145, 145)
                         .addComponent(arma_field1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -344,7 +337,7 @@ public class Interfaz extends javax.swing.JFrame {
                                     .addComponent(damage_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
+                        .addGap(23, 23, 23)
                         .addComponent(age_field1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -428,7 +421,11 @@ public class Interfaz extends javax.swing.JFrame {
         damage_field2.setText(" ");
 
         age_field2.setForeground(new java.awt.Color(51, 51, 51));
-        age_field2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        try {
+            age_field2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#######")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         button5.setBackground(new java.awt.Color(153, 153, 153));
         button5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -725,6 +722,7 @@ public class Interfaz extends javax.swing.JFrame {
         Armas arma;
         String tipoC;
         String estado;
+        try{
         
         name=name_field1.getText();
         edad=Integer.parseInt(age_field1.getText());
@@ -755,6 +753,10 @@ public class Interfaz extends javax.swing.JFrame {
             Campistas newcampista=new Campistas(tipoC,estado,name,edad,sexo,arma);
             muertos.add(newcampista);
         }
+        }
+        catch(Exception e){
+            System.out.println("Ocurrio un error al ingresar sus datos");
+        }
         
         
     }//GEN-LAST:event_Save_button1MouseClicked
@@ -767,6 +769,7 @@ public class Interfaz extends javax.swing.JFrame {
         int damage;
         Armas arma;
         int desaparecidos;
+        try{
         
         desaparecidos=Integer.parseInt(desa_1.getText());
         name=name_field2.getText();
@@ -784,6 +787,10 @@ public class Interfaz extends javax.swing.JFrame {
         }
         Luci_Fernandos newmonster=new Luci_Fernandos(desaparecidos,name,edad,sexo,arma);
         monsters.add(newmonster);
+        }
+        catch(Exception e){
+            System.out.println("Ocurrio un error al ingresar sus datos");
+        }
         
     }//GEN-LAST:event_button5MouseClicked
 
@@ -837,7 +844,7 @@ public class Interfaz extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button Save_button1;
     private javax.swing.JTabbedPane Tab1;
-    private javax.swing.JFormattedTextField age_field1;
+    private java.awt.TextField age_field1;
     private javax.swing.JFormattedTextField age_field2;
     private javax.swing.JComboBox<String> arma_field1;
     private javax.swing.JComboBox<String> arma_field2;
