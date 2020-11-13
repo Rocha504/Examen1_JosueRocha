@@ -10,16 +10,19 @@ public class Personas {
     private String nombre;
     private int edad;
     private String sexo;
+    private Armas arma;
 
     public Personas() {
     }
 
-    public Personas(String nombre, int edad, String sexo) {
+    public Personas(String nombre, int edad, String sexo, Armas arma) {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
+        this.arma = arma;
     }
 
+    
     public String getNombre() {
         return nombre;
     }

@@ -17,10 +17,12 @@ public class Luci_Fernandos extends Personas{
         this.desaparecidos = desaparecidos;
     }
 
-    public Luci_Fernandos(int desaparecidos, String nombre, int edad, String sexo) {
-        super(nombre, edad, sexo);
+    public Luci_Fernandos(int desaparecidos, String nombre, int edad, String sexo, Armas arma) {
+        super(nombre, edad, sexo, arma);
         this.desaparecidos = desaparecidos;
     }
+
+    
 
     public int getDesaparecidos() {
         return desaparecidos;

@@ -19,11 +19,14 @@ public class Campistas extends Personas{
         this.estado = estado;
     }
 
-    public Campistas(String tipo, String estado, String nombre, int edad, String sexo) {
-        super(nombre, edad, sexo);
+    public Campistas(String tipo, String estado, String nombre, int edad, String sexo, Armas arma) {
+        super(nombre, edad, sexo, arma);
         this.tipo = tipo;
         this.estado = estado;
     }
+    
+
+    
 
     public String getTipo() {
         return tipo;
