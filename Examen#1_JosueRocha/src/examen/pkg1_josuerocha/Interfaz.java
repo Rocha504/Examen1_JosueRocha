@@ -94,12 +94,12 @@ public class Interfaz extends javax.swing.JFrame {
         arma_field2 = new javax.swing.JComboBox<>();
         label14 = new java.awt.Label();
         damage_field2 = new java.awt.TextField();
-        age_field2 = new javax.swing.JFormattedTextField();
         button5 = new java.awt.Button();
         jLabel4 = new javax.swing.JLabel();
         label17 = new java.awt.Label();
         label18 = new java.awt.Label();
-        desa_1 = new javax.swing.JFormattedTextField();
+        age_field2 = new java.awt.TextField();
+        desa_1 = new java.awt.TextField();
         jPanel5 = new javax.swing.JPanel();
         label15 = new java.awt.Label();
         button2 = new java.awt.Button();
@@ -405,6 +405,7 @@ public class Interfaz extends javax.swing.JFrame {
         buttonGroup4.add(rb_m2);
         rb_m2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         rb_m2.setForeground(new java.awt.Color(51, 51, 51));
+        rb_m2.setSelected(true);
         rb_m2.setText("M");
 
         jRadioButton8.setBackground(new java.awt.Color(153, 0, 51));
@@ -429,13 +430,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         damage_field2.setText(" ");
 
-        age_field2.setForeground(new java.awt.Color(51, 51, 51));
-        try {
-            age_field2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#######")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
         button5.setBackground(new java.awt.Color(153, 153, 153));
         button5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         button5.setForeground(new java.awt.Color(51, 51, 51));
@@ -443,6 +437,11 @@ public class Interfaz extends javax.swing.JFrame {
         button5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 button5MouseClicked(evt);
+            }
+        });
+        button5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button5ActionPerformed(evt);
             }
         });
 
@@ -457,8 +456,16 @@ public class Interfaz extends javax.swing.JFrame {
         label18.setForeground(new java.awt.Color(51, 51, 51));
         label18.setText("Cantidad de personas asesinadas");
 
+        age_field2.setForeground(new java.awt.Color(51, 51, 51));
+        age_field2.setText(" ");
+        age_field2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                age_field2ActionPerformed(evt);
+            }
+        });
+
         desa_1.setForeground(new java.awt.Color(51, 51, 51));
-        desa_1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        desa_1.setText(" ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -478,13 +485,13 @@ public class Interfaz extends javax.swing.JFrame {
                                     .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(age_field2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(name_field2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(name_field2, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(rb_m2)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton8)))))))
+                                        .addComponent(jRadioButton8))
+                                    .addComponent(age_field2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addGap(244, 244, 244)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -502,14 +509,15 @@ public class Interfaz extends javax.swing.JFrame {
                         .addComponent(arma_field2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(367, 367, 367))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(desa_1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(desa_1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(label17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(66, 66, 66)))
                 .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -549,23 +557,23 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rb_m2)
                     .addComponent(jRadioButton8))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(button5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(label17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(54, 54, 54))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(label18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addComponent(desa_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(53, 53, 53))))
         );
 
         Tab1.addTab("Agregar monstruos", jPanel2);
@@ -737,7 +745,7 @@ public class Interfaz extends javax.swing.JFrame {
         String tipoC;
         String estado;
         
-        
+        try{
         name=name_field1.getText();
         edad=Integer.parseInt(age_field1.getText());
         tipoA=arma_field1.getSelectedItem().toString();
@@ -751,60 +759,42 @@ public class Interfaz extends javax.swing.JFrame {
         else{
             sexo="Femenino";
         }
+        
         if(rb_c.isSelected()){
             tipoC="Supervisor";
         }
         else{
             tipoC="Campista";
         }
+        
         if(rb_e.isSelected()){
             estado="Vivo";
-            Campistas newcampista=new Campistas(tipoC,estado,name,edad,sexo,arma);
-            vivos.add(newcampista);
+             
         }
+        
         else{
             estado="Desaparecido";
-            Campistas newcampista=new Campistas(tipoC,estado,name,edad,sexo,arma);
-            muertos.add(newcampista);
+            
         }
+        Campistas newcampista=new Campistas(tipoC,estado,name,edad,sexo,arma);
+        
+         
+        }
+        catch(Exception e){
+            System.out.println("Ocurrio un error.");
+            System.out.println("Tips para prevenir errores: ");
+            System.out.println("Asegurese de no tener ningun espacio en la edad y dano del arma");
+            System.out.println("Llene todos los campos.");
+            System.out.println("Presione guardar hasta que todos los cambos esten llenos");
+        }
+          JOptionPane.showMessageDialog(this,"La persona se agrego correctamente");
+        
+        
         
        
         
         
     }//GEN-LAST:event_Save_button1MouseClicked
-
-    private void button5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button5MouseClicked
-         String name;
-        int edad;
-        String sexo;
-        String tipoA;
-        int damage;
-        Armas arma;
-        int desaparecidos;
-        try{
-        
-        desaparecidos=Integer.parseInt(desa_1.getText());
-        name=name_field2.getText();
-        edad=Integer.parseInt(age_field2.getText());
-        tipoA=arma_field2.getSelectedItem().toString();
-        damage=Integer.parseInt(damage_field2.getText());
-        arma=new Armas(tipoA,damage);
-        
-        
-        if(rb_m1.isSelected()){
-            sexo="Masculino";
-        }
-        else{
-            sexo="Femenino";
-        }
-        Luci_Fernandos newmonster=new Luci_Fernandos(desaparecidos,name,edad,sexo,arma);
-        monsters.add(newmonster);
-        }
-        catch(Exception e){
-            System.out.println("Ocurrio un error al ingresar sus datos");
-        }
-        
-    }//GEN-LAST:event_button5MouseClicked
 
     private void boton_MActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_MActionPerformed
         JOptionPane.showMessageDialog(this,muertos);
@@ -825,6 +815,50 @@ public class Interfaz extends javax.swing.JFrame {
     private void Save_button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_button1ActionPerformed
         
     }//GEN-LAST:event_Save_button1ActionPerformed
+
+    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button5ActionPerformed
+
+    private void button5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button5MouseClicked
+        String name;
+        int edad;
+        String sexo;
+        String tipoA;
+        int damage;
+        Armas arma;
+        int desaparecidos;
+        try{
+
+            desaparecidos=Integer.parseInt(desa_1.getText());
+            name=name_field2.getText();
+            edad=Integer.parseInt(age_field2.getText());
+            tipoA=arma_field2.getSelectedItem().toString();
+            damage=Integer.parseInt(damage_field2.getText());
+            arma=new Armas(tipoA,damage);
+
+            if(rb_m1.isSelected()){
+                sexo="Masculino";
+            }
+            else{
+                sexo="Femenino";
+            }
+            Luci_Fernandos newmonster=new Luci_Fernandos(desaparecidos,name,edad,sexo,arma);
+
+        }
+        catch(Exception e){
+            System.out.println("Ocurrio un error.");
+            System.out.println("Tips para prevenir errores: ");
+            System.out.println("Asegurese de no tener ningun espacio en la edad y dano del arma");
+            System.out.println("Llene todos los campos.");
+            System.out.println("Presione guardar hasta que todos los cambos esten llenos");
+        }
+
+    }//GEN-LAST:event_button5MouseClicked
+
+    private void age_field2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_age_field2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_age_field2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -865,7 +899,7 @@ public class Interfaz extends javax.swing.JFrame {
     private java.awt.Button Save_button1;
     private javax.swing.JTabbedPane Tab1;
     private java.awt.TextField age_field1;
-    private javax.swing.JFormattedTextField age_field2;
+    private java.awt.TextField age_field2;
     private javax.swing.JComboBox<String> arma_field1;
     private javax.swing.JComboBox<String> arma_field2;
     private java.awt.Button boton_M;
@@ -880,7 +914,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup4;
     private java.awt.TextField damage_field1;
     private java.awt.TextField damage_field2;
-    private javax.swing.JFormattedTextField desa_1;
+    private java.awt.TextField desa_1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
