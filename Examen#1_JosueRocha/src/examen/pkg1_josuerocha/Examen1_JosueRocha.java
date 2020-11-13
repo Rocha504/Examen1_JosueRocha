@@ -12,6 +12,8 @@ public class Examen1_JosueRocha {
      */
     public static void main(String[] args) {
         
+        Interfaz.main(args);
+        
     }
     
 }
