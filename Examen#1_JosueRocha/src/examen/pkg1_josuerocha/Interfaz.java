@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 public class Interfaz extends javax.swing.JFrame {
 
     /**
-     * Creates new form Interfaz
+     * Creates new form
      */
     public Interfaz() {
         initComponents();
@@ -70,7 +70,6 @@ public class Interfaz extends javax.swing.JFrame {
         arma_field1 = new javax.swing.JComboBox<>();
         label8 = new java.awt.Label();
         label9 = new java.awt.Label();
-        damage_field1 = new java.awt.TextField();
         label10 = new java.awt.Label();
         rb_c = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
@@ -81,6 +80,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         label16 = new java.awt.Label();
         age_field1 = new java.awt.TextField();
+        damage_field1 = new java.awt.TextField();
         jPanel2 = new javax.swing.JPanel();
         label5 = new java.awt.Label();
         label6 = new java.awt.Label();
@@ -143,6 +143,7 @@ public class Interfaz extends javax.swing.JFrame {
         buttonGroup1.add(rb_m1);
         rb_m1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         rb_m1.setForeground(new java.awt.Color(51, 51, 51));
+        rb_m1.setSelected(true);
         rb_m1.setText("M");
 
         jRadioButton2.setBackground(new java.awt.Color(0, 204, 204));
@@ -153,7 +154,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         label7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         label7.setForeground(new java.awt.Color(51, 51, 51));
-        label7.setText("Ingrese la infromacion de su arma");
+        label7.setText("Ingrese la informacion de su arma");
 
         arma_field1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         arma_field1.addActionListener(new java.awt.event.ActionListener() {
@@ -170,9 +171,6 @@ public class Interfaz extends javax.swing.JFrame {
         label9.setForeground(new java.awt.Color(51, 51, 51));
         label9.setText("Daño de arma");
 
-        damage_field1.setForeground(new java.awt.Color(51, 51, 51));
-        damage_field1.setText(" ");
-
         label10.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         label10.setForeground(new java.awt.Color(51, 51, 51));
         label10.setText("Tipo de campista");
@@ -181,6 +179,7 @@ public class Interfaz extends javax.swing.JFrame {
         buttonGroup2.add(rb_c);
         rb_c.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         rb_c.setForeground(new java.awt.Color(51, 51, 51));
+        rb_c.setSelected(true);
         rb_c.setText("Supervisor");
 
         jRadioButton4.setBackground(new java.awt.Color(0, 204, 204));
@@ -202,6 +201,7 @@ public class Interfaz extends javax.swing.JFrame {
         buttonGroup3.add(rb_e);
         rb_e.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         rb_e.setForeground(new java.awt.Color(51, 51, 51));
+        rb_e.setSelected(true);
         rb_e.setText("Si");
 
         jRadioButton6.setBackground(new java.awt.Color(0, 204, 204));
@@ -219,6 +219,11 @@ public class Interfaz extends javax.swing.JFrame {
                 Save_button1MouseClicked(evt);
             }
         });
+        Save_button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Save_button1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Click aqui cuando haya ingresado");
@@ -229,6 +234,9 @@ public class Interfaz extends javax.swing.JFrame {
 
         age_field1.setForeground(new java.awt.Color(51, 51, 51));
         age_field1.setText(" ");
+
+        damage_field1.setForeground(new java.awt.Color(51, 51, 51));
+        damage_field1.setText(" ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -248,8 +256,8 @@ public class Interfaz extends javax.swing.JFrame {
                                     .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(32, 32, 32)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(arma_field1, 0, 80, Short.MAX_VALUE)
-                                    .addComponent(damage_field1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(damage_field1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(arma_field1, 0, 65, Short.MAX_VALUE))))
                         .addGap(0, 187, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,15 +271,18 @@ public class Interfaz extends javax.swing.JFrame {
                                                     .addComponent(label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addComponent(label3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(name_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(age_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                            .addComponent(rb_m1)
-                                                            .addGap(49, 49, 49)
-                                                            .addComponent(jRadioButton2)))))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(name_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(rb_m1)
+                                                                .addGap(49, 49, 49)
+                                                                .addComponent(jRadioButton2))))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                        .addGap(6, 6, 6)
+                                                        .addComponent(age_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -300,31 +311,29 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(label7, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                    .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(label7, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                            .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(44, 44, 44)
+                        .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(23, 23, 23)
+                                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(23, 23, 23)
-                                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(rb_e)
-                                            .addComponent(jRadioButton6))
-                                        .addGap(30, 30, 30)
-                                        .addComponent(name_field1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(rb_e)
+                                    .addComponent(jRadioButton6))
+                                .addGap(30, 30, 30)
+                                .addComponent(name_field1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
+                        .addGap(53, 53, 53)
                         .addComponent(arma_field1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -333,11 +342,11 @@ public class Interfaz extends javax.swing.JFrame {
                             .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(24, 24, 24)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(damage_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(damage_field1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(24, 24, 24)
                         .addComponent(age_field1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -573,6 +582,11 @@ public class Interfaz extends javax.swing.JFrame {
         button2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         button2.setForeground(new java.awt.Color(51, 51, 51));
         button2.setLabel("Campistas");
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
 
         button3.setBackground(new java.awt.Color(153, 0, 51));
         button3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -722,7 +736,7 @@ public class Interfaz extends javax.swing.JFrame {
         Armas arma;
         String tipoC;
         String estado;
-        try{
+        
         
         name=name_field1.getText();
         edad=Integer.parseInt(age_field1.getText());
@@ -753,10 +767,8 @@ public class Interfaz extends javax.swing.JFrame {
             Campistas newcampista=new Campistas(tipoC,estado,name,edad,sexo,arma);
             muertos.add(newcampista);
         }
-        }
-        catch(Exception e){
-            System.out.println("Ocurrio un error al ingresar sus datos");
-        }
+        
+       
         
         
     }//GEN-LAST:event_Save_button1MouseClicked
@@ -805,6 +817,14 @@ public class Interfaz extends javax.swing.JFrame {
     private void name_field1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name_field1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_name_field1ActionPerformed
+
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        
+    }//GEN-LAST:event_button2ActionPerformed
+
+    private void Save_button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_button1ActionPerformed
+        
+    }//GEN-LAST:event_Save_button1ActionPerformed
 
     /**
      * @param args the command line arguments
